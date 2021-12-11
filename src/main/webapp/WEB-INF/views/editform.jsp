@@ -5,6 +5,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Edit Event</title>
@@ -15,8 +16,8 @@
 </script>
 
 </head>
-<body>
 
+<body>
 	<div class="page_wrapper"
 		style="padding-top: 130px; padding-bottom: 130px;">
 		<div class="form_box">
@@ -26,20 +27,28 @@
 					<form:form commandName="u" method="POST" action="../editok">
 						<form:hidden path="id" />
 						<div class="row">
-							<div class="col-2">
-								<div class="input-group">
-									<label for="title" class="label">name</label>
-									<form:input path="name" class="input-style" />
-								</div>
+							<div class="input-group">
+								<label for="name" class="label">name</label>
+								<form:input path="name" class="input-style" />
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-2">
-								<div class="input-group">
-									<label for="description" class="label">Description</label>
-									<form:textarea rows="4" path="description" class="input-style"
-										style="width: 100%;" />
-								</div>
+							<div class="input-group">
+								<label for="kcal" class="label">kcal</label>
+								<form:input path="kcal" class="input-style" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-group">
+								<label for="category" class="label">category</label>
+								<form:input path="category" class="input-style" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-group">
+								<label for="description" class="label">Description</label>
+								<form:textarea rows="4" path="description" class="input-style"
+									style="width: 100%;" />
 							</div>
 						</div>
 						<div class="button-group" style="margin-left: 50px;">
@@ -52,6 +61,6 @@
 			</div>
 		</div>
 	</div>
-
 </body>
+
 </html>

@@ -4,6 +4,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Add Event</title>
@@ -14,6 +15,7 @@
 </script>
 
 </head>
+
 <body>
 	<div class="page_wrapper"
 		style="padding-top: 130px; padding-bottom: 130px;">
@@ -27,12 +29,22 @@
 								name="name" class="input-style" id="name">
 						</div>
 						<div class="input-group">
-							<label for="category" class="label">category</label> <input
-								type="number" name="category" class="input-style" id="category">
+							<input type="radio" id="cate_0" name="category" value=0>
+							<label for="cate_0">과일</label><br> <input type="radio"
+								id="cate_1" name="category" value=1> <label for="cate_1">채식</label><br>
+							<input type="radio" id="cate_2" name="category" value=2>
+							<label for="cate_2">유제품</label><br> <input type="radio"
+								id="cate_3" name="category" value=3> <label for="cate_3">달걀</label><br>
+							<input type="radio" id="cate_4" name="category" value=4>
+							<label for="cate_4">해산물</label><br> <input type="radio"
+								id="cate_5" name="category" value=5> <label for="cate_5">조류</label><br>
+							<input type="radio" id="cate_6" name="category" value=6>
+							<label for="cate_6">육류</label>
 						</div>
 						<div class="input-group">
-							<label for="kcal" class="label">kcal</label> <input
-								type="number" name="kcal" class="input-style" id="kcal">
+							<label for="kcal" class="label">kcal (100g)</label> <input
+								type="number" step="0.1" name="kcal" class="input-style"
+								id="kcal">
 						</div>
 						<div class="input-group">
 							<label for="description" class="label">Description</label>
@@ -51,4 +63,5 @@
 	</div>
 
 </body>
+
 </html>
