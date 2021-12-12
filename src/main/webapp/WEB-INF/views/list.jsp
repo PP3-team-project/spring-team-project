@@ -31,7 +31,7 @@
 		<div style="width: 100%; display: flex; justify-content: right">
 			<button type="button" class="btn btn-warning" onclick="location.href='../login/logout'">로그아웃</button>
 		</div>
-		<h1 class="title table-striped">Food List</h1>
+		<h1 class="title table-striped">Food List</h1><br>
 		<table class="table" width="90%">
 			<thead>
 				<tr>
