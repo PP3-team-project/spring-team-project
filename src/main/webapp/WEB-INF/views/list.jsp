@@ -57,7 +57,7 @@
 						</td>
 						<td>${u.description}</td>
 						<td>${u.regdate}</td>
-						<td><a class="btn btn-outline-primary" href="view/${u.id}">Info</a></td>
+						<td><a class="btn btn-primary" href="view/${u.id}">Info</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
