@@ -28,7 +28,10 @@
 
 <body>
 	<div class="container">
-		<h1 class="title table-striped">Food List</h1>
+		<div style="width: 100%; display: flex; justify-content: right">
+			<button type="button" class="btn btn-warning" onclick="location.href='../login/logout'">로그아웃</button>
+		</div>
+		<h1 class="title table-striped">Food List</h1><br>
 		<table class="table" width="90%">
 			<thead>
 				<tr>
@@ -59,7 +62,7 @@
 			</tbody>
 		</table>
 		<br>
-			<button type="button" class="btn btn-success" onclick="location.href='add'">Add</button>
+		<button type="button" class="btn btn-success" onclick="location.href='add'">Add</button>
 	</div>
 </body>
 
