@@ -9,6 +9,7 @@ public class BoardVO {
 	private double kcal;
 	private int category;
 	private Date regdate;
+	private String photo;
 
 	public int getId() {
 		return id;
@@ -56,6 +57,14 @@ public class BoardVO {
 
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 }

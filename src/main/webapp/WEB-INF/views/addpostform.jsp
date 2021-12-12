@@ -47,6 +47,11 @@
 								id="kcal">
 						</div>
 						<div class="input-group">
+							<label for="photo" class="label">photo</label> <input
+								type="file" step="0.1" name="photo" class="input-style"
+								id="photo">
+						</div>
+						<div class="input-group">
 							<label for="description" class="label">Description</label>
 							<textarea class="input-style" id="description" rows="4"
 								name="description"></textarea>
