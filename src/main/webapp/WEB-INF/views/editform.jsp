@@ -27,7 +27,7 @@
 	<div class="container">
 		<div style="width: 100%; display: flex; justify-content: center">
 			<form:form commandName="u" method="POST" action="../editok" style="width: 720px">
-				<h1>Edit Food</h1>
+				<h1>음식 정보 수정</h1>
 				<br>
 				<form:hidden path="id" />
 				<div class="row mb-3">
