@@ -62,7 +62,7 @@
 				<div class="row mb-3">
 					<label for="description" class="col-sm-2 col-form-label">설명</label>
 					<div class="col-sm-10">
-						<p class="form-control">${u.description}</p>
+						<textarea class="form-control" rows="4">${u.description}</textarea>
 					</div>
 				</div>
 				<br>
