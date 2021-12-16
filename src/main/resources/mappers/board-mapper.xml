@@ -20,4 +20,7 @@
 	<select id="getBoardList" resultType="board">
 		select * from FOOD order by id desc
 	</select>
+	<select id ="getBoardList_cat" resultType = "board">
+		select * from FOOD where category = #{category} order by id desc
+	</select>
 </mapper>

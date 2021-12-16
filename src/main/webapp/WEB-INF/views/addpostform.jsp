@@ -25,7 +25,7 @@
 <body>
 	<div class="container">
 		<div style="width: 100%; display: flex; justify-content: center">
-			<form action="addok" method="post" style="width: 720px">
+			<form action="addok" method="post" style="width: 720px" enctype = "multipart/form-data">
 				<h1>Add Food</h1>
 				<br>
 				<div class="row mb-3">

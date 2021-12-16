@@ -30,7 +30,8 @@
 	<div class="container">
 		<div style="width: 100%; display: flex; justify-content: right">
 			<a class="btn btn-info" href="view/${u.id}" style="margin-right: 10px;">내 정보</a>
-			<button type="button" class="btn btn-warning" onclick="location.href='../login/logout'">로그아웃</button>
+			<button type="button" class="btn btn-warning" style="margin-right: 10px;" onclick="location.href='../login/logout'">로그아웃</button>
+			<button type = "button" class = "btn btn-primary" onclick = "location.href = 'list_cat1'">과일별</button>
 		</div>
 		<h1 class="title table-striped">Food List</h1><br>
 		<table class="table" width="90%">
