@@ -27,7 +27,11 @@ public class BoardController {
 		model.addAttribute("list",boardService.getBoardList());
 		return "list";
 	}
-	
+	@RequestMapping(value = "/list_cat1", method = RequestMethod.GET)
+	public String boardlist_cat1(Model model) {
+		model.addAttribute("list", boardService.getBoardList_cat(0));
+		return "list_cat1";
+	}
 	@RequestMapping(value ="/add", method = RequestMethod.GET)
 	public String addPost() {
 		return "addpostform";

@@ -35,5 +35,11 @@ public class BoardDAO {
 		List<BoardVO> result = sqlSession.selectList("Board.getBoardList");
 		return result;
 	}
+	
+	public List<BoardVO> getBoardList_cat(int cat) {
+		List<BoardVO> result = sqlSession.selectList("Board.getBoardList_cat",cat);
+		return result;
+	}
 
+	
 }

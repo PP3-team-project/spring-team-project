@@ -12,4 +12,7 @@ public interface BoardService {
 	public BoardVO getBoard(int id);
 
 	public List<BoardVO> getBoardList();
+
+	public List<BoardVO> getBoardList_cat(int cat);
+	
 }
