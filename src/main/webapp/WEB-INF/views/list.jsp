@@ -32,6 +32,7 @@
 			[0, 1, 2, 3],
 			[0, 1, 2, 3, 4],
 			[0, 1, 2, 3, 4, 5],
+			[0, 1, 2, 3, 4, 5, 6],
 			[0, 1, 2, 3, 4, 5, 6]
 		];
 		function type_filter(type_n) {
@@ -42,7 +43,7 @@
 				document.getElementById("inner_table").innerHTML += '<tr><td>${u.name}</td><td>${u.kcal} kcal</td><td>' + cate_name[cate] + '</td><td>${u.description}</td><td>${u.regdate}</td><td><a class="btn btn-primary" href="view/${u.id}">Info</a></td></tr>';
 				}
 			</c:forEach>
-			for (var i = 0; i < 7; i++) {
+			for (var i = 0; i < 8; i++) {
 				if (i == type_n)
 					document.getElementById("type_button_" + i).className = "btn btn-success active";
 				else
@@ -61,6 +62,8 @@
 		<h1 class="title">Food List</h1><br>
 		<div style="display: flex; justify-content: center;">
 			<div class="btn-group" role="group" aria-label="Basic example">
+				<button id="type_button_7" type="button" class="btn btn-success active"
+					onclick="type_filter(7);">전체</button>
 				<button id="type_button_0" type="button" class="btn btn-success" onclick="type_filter(0);">비건</button>
 				<button id="type_button_1" type="button" class="btn btn-success" onclick="type_filter(1);">락토
 					베지테리언</button>
@@ -88,7 +91,14 @@
 					<th scope="col">더보기</th>
 				</tr>
 			</thead>
-			<tbody id="inner_table"></tbody>
+			<tbody id="inner_table">
+				<c:forEach items="${list}" var="u">
+					<script>
+						var cate = ${ u.category };
+						document.write('<tr><td>${u.name}</td><td>${u.kcal} kcal</td><td>' + cate_name[cate] + '</td><td>${u.description}</td><td>${u.regdate}</td><td><a class="btn btn-primary" href="view/${u.id}">Info</a></td></tr>');
+					</script>
+				</c:forEach>
+			</tbody>
 		</table>
 		<br>
 		<button type="button" class="btn btn-success" onclick="location.href='add'">Add</button>
