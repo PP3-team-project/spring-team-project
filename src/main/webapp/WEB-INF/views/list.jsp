@@ -22,7 +22,34 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 	<script>
-		var cate_name = ["과일", "채식", "유제품", "달걀", "해산물", "조류", "육류"];
+		var arr = new Array();
+
+		var cate_name = ["과일", "채소", "유제품", "달걀", "해산물", "조류", "육류"];
+		var type = [
+			[0, 1],
+			[0, 1, 2],
+			[0, 1, 3],
+			[0, 1, 2, 3],
+			[0, 1, 2, 3, 4],
+			[0, 1, 2, 3, 4, 5],
+			[0, 1, 2, 3, 4, 5, 6],
+			[0, 1, 2, 3, 4, 5, 6]
+		];
+		function type_filter(type_n) {
+			document.getElementById("inner_table").innerHTML = "";
+			<c:forEach items="${list}" var="u">
+				if (type[type_n].indexOf(${u.category}) > 0) {
+					var cate = ${u.category};
+				document.getElementById("inner_table").innerHTML += '<tr><td>${u.name}</td><td>${u.kcal} kcal</td><td>' + cate_name[cate] + '</td><td>${u.description}</td><td>${u.regdate}</td><td><a class="btn btn-primary" href="view/${u.id}">Info</a></td></tr>';
+				}
+			</c:forEach>
+			for (var i = 0; i < 8; i++) {
+				if (i == type_n)
+					document.getElementById("type_button_" + i).className = "btn btn-success active";
+				else
+					document.getElementById("type_button_" + i).className = "btn btn-success";
+			}
+		}
 	</script>
 </head>
 
@@ -32,7 +59,27 @@
 			<a class="btn btn-info" href="view/${u.id}" style="margin-right: 10px;">내 정보</a>
 			<button type="button" class="btn btn-warning" onclick="location.href='../login/logout'">로그아웃</button>
 		</div>
-		<h1 class="title table-striped">Food List</h1><br>
+		<h1 class="title">Food List</h1><br>
+		<div style="display: flex; justify-content: center;">
+			<div class="btn-group" role="group" aria-label="Basic example">
+				<button id="type_button_7" type="button" class="btn btn-success active"
+					onclick="type_filter(7);">전체</button>
+				<button id="type_button_0" type="button" class="btn btn-success" onclick="type_filter(0);">비건</button>
+				<button id="type_button_1" type="button" class="btn btn-success" onclick="type_filter(1);">락토
+					베지테리언</button>
+				<button id="type_button_2" type="button" class="btn btn-success" onclick="type_filter(2);">오보
+					베지테리언</button>
+				<button id="type_button_3" type="button" class="btn btn-success" onclick="type_filter(3);">락토 오보
+					베지테리언</button>
+				<button id="type_button_4" type="button" class="btn btn-success" onclick="type_filter(4);">페스코
+					베지테리언</button>
+				<button id="type_button_5" type="button" class="btn btn-success" onclick="type_filter(5);">폴로
+					베지테리언</button>
+				<button id="type_button_6" type="button" class="btn btn-success"
+					onclick="type_filter(6);">플렉시테리언</button>
+			</div>
+		</div>
+		<br>
 		<table class="table" width="90%">
 			<thead>
 				<tr>
@@ -44,21 +91,12 @@
 					<th scope="col">더보기</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="inner_table">
 				<c:forEach items="${list}" var="u">
-					<tr>
-						<td>${u.name}</td>
-						<td>${u.kcal} kcal</td>
-						<td>
-							<script>
-								var cate = ${ u.category };
-								document.write(cate_name[cate])
-							</script>
-						</td>
-						<td>${u.description}</td>
-						<td>${u.regdate}</td>
-						<td><a class="btn btn-primary" href="view/${u.id}">Info</a></td>
-					</tr>
+					<script>
+						var cate = ${ u.category };
+						document.write('<tr><td>${u.name}</td><td>${u.kcal} kcal</td><td>' + cate_name[cate] + '</td><td>${u.description}</td><td>${u.regdate}</td><td><a class="btn btn-primary" href="view/${u.id}">Info</a></td></tr>');
+					</script>
 				</c:forEach>
 			</tbody>
 		</table>
