@@ -93,7 +93,7 @@
 		</div>
 		<br>
 		<div style="display: flex; justify-content: right; align-self: center;">
-			<input type="text" class="form-control" style="width: 30%; margin-right: 10px;" onkeyup="searchFunction()" placeholder="이름 / 칼로리 / 종류 / 설명 검색"
+			<input type="text" id="myInput" class="form-control" style="width: 30%; margin-right: 10px;" onkeyup="searchFunction()" placeholder="이름 / 칼로리 / 종류 / 설명 검색"
 				title="검색하기">
 			<img src="../img/search.png" width="35px" height="35px">
 		</div>
