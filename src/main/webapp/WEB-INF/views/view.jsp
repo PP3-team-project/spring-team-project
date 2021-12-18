@@ -57,6 +57,7 @@
 						<!-- <p class="form-control">${u.photo}</p> -->
 						<!-- TODO::사진기능 추가 -->
 						<p class="form-control">사진 기능 추가 예정</p>
+						
 					</div>
 				</div>
 				<div class="row mb-3">

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -50,16 +51,27 @@
 					document.getElementById("type_button_" + i).className = "btn btn-success";
 			}
 		}
+		$(document).ready(function () {
+			$("#myInput").on("keyup", function () {
+				var value = $(this).val().toLowerCase();
+				$("#inner_table tr").filter(function () {
+					$(this).toggle($(this).text()
+						.toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
 	</script>
 </head>
 
 <body>
 	<div class="container">
 		<div style="width: 100%; display: flex; justify-content: right">
-			<a class="btn btn-info" href="view/${u.id}" style="margin-right: 10px;">내 정보</a>
-			<button type="button" class="btn btn-warning" onclick="location.href='../login/logout'">로그아웃</button>
+			<button type="button" class="btn btn-info" style="margin-right: 10px;" onclick="location.href='add'">Add</button>
+			<button type="button" class="btn btn-warning" style="margin-right: 10px;"
+				onclick="location.href='../login/logout'">로그아웃</button>
 		</div>
-		<h1 class="title">Food List</h1><br>
+		<h1 class="title">Food List</h1>
+		<br><br>
 		<div style="display: flex; justify-content: center;">
 			<div class="btn-group" role="group" aria-label="Basic example">
 				<button id="type_button_7" type="button" class="btn btn-success active"
@@ -80,7 +92,13 @@
 			</div>
 		</div>
 		<br>
-		<table class="table" width="90%">
+		<div style="display: flex; justify-content: right; align-self: center;">
+			<input type="text" class="form-control" style="width: 30%; margin-right: 10px;" onkeyup="searchFunction()" placeholder="이름 / 칼로리 / 종류 / 설명 검색"
+				title="검색하기">
+			<img src="../img/search.png" width="35px" height="35px">
+		</div>
+		<br>
+		<table class="table" id=table width="90%">
 			<thead>
 				<tr>
 					<th scope="col">음식이름</th>
@@ -101,7 +119,6 @@
 			</tbody>
 		</table>
 		<br>
-		<button type="button" class="btn btn-success" onclick="location.href='add'">Add</button>
 	</div>
 </body>
 
