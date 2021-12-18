@@ -37,8 +37,8 @@
 					<label for="password" class="form-label">Password</label>
 					<input type="password" name="password" class="form-control" id="password">
 				</div>
-				<button type="submit" class="btn btn-success" style="margin-right: 5px;">로그인</button>
-				<a class="btn btn-success" href="#" role="button">회원가입</a>
+				<button type="submit" class="btn btn-success">로그인</button>
+				<!-- <a class="btn btn-success" href="#" role="button">회원가입</a> -->
 			</form>
 		</div>
 	</div>
